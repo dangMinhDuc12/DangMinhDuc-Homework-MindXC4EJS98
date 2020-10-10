@@ -1,0 +1,6 @@
+Init: OK
+Read :OK
+Update: OK
+Array of Objects: OK
+Object containing array: OK
+Object and Array mix structure: OK
