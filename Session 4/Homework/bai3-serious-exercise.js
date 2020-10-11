@@ -1,22 +1,27 @@
 let f1 = {
     name: 'HTML',
     complete: false,
+    square:'[]',
 };
 let f2 = {
     name: 'CSS',
     complete: false,
+    square:'[]',
 };
 let f3 = {
     name: 'Basics of javascript',
     complete: false,
+    square:'[]',
 };
 let f4 = {
     name: 'Node package manager (Npm)',
     complete: false,
+    square:'[]',
 };
 let f5 = {
     name: 'Git',
     complete: false,
+    square:'[]',
 };
 let f = [];
 f.push(f1);
@@ -33,7 +38,7 @@ f.push(f5);
 // }
 
 //6.2
-let a = prompt('Enter your command(new, delete, update, complete)');
+// let a = prompt('Enter your command(new, delete, update, complete)');
 // if (a == 'new'){
 //     let f6 = {};
 //     let b = prompt('Enter new task');
@@ -100,6 +105,14 @@ let a = prompt('Enter your command(new, delete, update, complete)');
 
 
 
+//6.6
+let a = prompt('Ban da hoc xong bai nao');
 
+for (let i = 0; i < f.length; i++){
+        if (a == f[i].name){
+            f[i].square = '[x]';
+        }
+        console.log(`${i+1}. ${f[i].square} ${f[i].name}`);
+        
 
-
+}

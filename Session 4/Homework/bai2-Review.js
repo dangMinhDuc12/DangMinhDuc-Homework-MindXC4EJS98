@@ -94,10 +94,11 @@ phone.push(phone4);
 // }
 
 //5.4
-phone1.providers = 'Phu kien Zero, Dien tu cc';
-phone2.providers = 'Tgdd, Ddghn, VhStore';
-phone3.providers = 'Tgdd';
-phone4.providers = 'Tgdd';
+phone1.providers = ['Phu kien Zero', 'Dien tu cc']
+phone2.providers = ['Tgdd', 'Ddghn', 'Vhstore'];
+phone3.providers = ['Tgdd'];
+phone4.providers = ['Tgdd'];
+// console.log(phone[0].providers[0]);
 // for (let i = 0; i < phone.length; i++){
 //         console.log(`Name: ${phone[i].name}`);
 //         console.log(`Price: ${phone[i].price}`);
@@ -106,6 +107,25 @@ phone4.providers = 'Tgdd';
 //     }
 
 //5.5
+let a = prompt('Enter category');
+for (let i = 0; i < phone.length; i++){
+    if (phone[i].providers.indexOf(a) != -1){
+        console.log(`Name : ${phone[i].name}`);
+            console.log(`brand : ${phone[i].brand}`);
+            console.log(`price : ${phone[i].price}`);
+            console.log(`color : ${phone[i].color}`);
+            console.log(`category : ${phone[i].category}`);
+            console.log(`Provider:`);
+        for (let j = 0; j < phone[i].providers.length; j++){
+            
+            console.log(phone[i].providers[j]);
+
+        }
+    }
+    console.log(`------------------`);
+}
+
+
 
 
 
