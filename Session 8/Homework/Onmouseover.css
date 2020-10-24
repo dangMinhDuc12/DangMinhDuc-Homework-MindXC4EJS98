@@ -1,0 +1,23 @@
+.div-1 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    position: absolute;
+    left: 37px;
+}
+.div-2 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: absolute;
+    top: 211px;
+    left: 0;
+}
+.div-3 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: absolute;
+    top:211px;
+    left: 188px;
+}
