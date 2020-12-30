@@ -46,7 +46,7 @@ class UserCard extends HTMLElement {
     </div>
   </div>`;
     
-  this.shadowDom.querySelector('h1').textContent = 'abc' // Có thể query sau khi định nghĩa shadowDom
+  this.shadowDom.querySelector('h1').textContent = 'Đây là Shadow DOM query' // Có thể query sau khi định nghĩa shadowDom và chỉ có thể dùng shadow DOM để query đến các component trong nó không thể dùng DOM ngoài để query đến các component
     
   }
   //Được gọi khi component được attach(đính kèm) vào DOM
@@ -65,3 +65,6 @@ class UserCard extends HTMLElement {
   
 }
 
+document.querySelector('h1').textContent = 'Đây là DOM query'
+
+window.customElements.define('user-card', UserCard);
