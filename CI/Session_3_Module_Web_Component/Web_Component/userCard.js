@@ -68,3 +68,8 @@ class UserCard extends HTMLElement {
 document.querySelector('h1').textContent = 'Đây là DOM query'
 
 window.customElements.define('user-card', UserCard);
+
+// Link bài viết chi tiết 
+//Shadow DOM: https://kipalog.com/posts/Duc-khoet-Javascript--Phan-17---ben-trong-Shadow-DOM---xay-dung-component-khep-kin?fbclid=IwAR0XV3XYzH_hVhM766Un5X90VMxUyatEeQUNyImaeJAUx_Iyi8x5bE3sp_4
+
+//Web component: https://kipalog.com/posts/Duc-khoet-Javascript--Phan-19---Ben-trong-custom-element---thu-thuat-xay-dung-component-toi-uu?fbclid=IwAR2MWO0V5D7RJZRM0mOIWlTKgEZSOQ6t-0W74J2BiF-I8TXS8AZaJVta99k
