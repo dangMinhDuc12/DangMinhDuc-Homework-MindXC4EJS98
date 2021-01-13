@@ -1,4 +1,4 @@
-class Welcome extends HTMLElement {
+class StoryScreen extends HTMLElement {
     constructor() {
         super();
         this.shadowDom = this.attachShadow({ mode: 'open' });
@@ -8,4 +8,4 @@ class Welcome extends HTMLElement {
 }
 
 
-window.customElements.define('welcome-screen', Welcome)
+window.customElements.define('story-screen', StoryScreen);

@@ -1,6 +1,6 @@
 import './screens/register-screen.js';
 import './screens/login-screen.js';
-import './screens/welcome.js'
+import './screens/story-screen.js'
 
 redirect('login');   
 
@@ -12,6 +12,6 @@ export function redirect(screenName, userName) {
     }else if(screenName === 'register') {
         document.querySelector('#app').innerHTML = `<register-screen></register-screen>`;
     }else if (screenName === 'welcome') {
-        document.querySelector('#app').innerHTML = `<welcome-screen></welcome-screen>`;
+        document.querySelector('#app').innerHTML = `<story-screen></story-screen>`;
     }
 }
