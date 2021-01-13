@@ -8,7 +8,7 @@ class InputWrapper extends HTMLElement {
             <style>
                 .error {
                     color: red;
-                    display: none;
+                    
                 }
             
             </style>
@@ -17,18 +17,37 @@ class InputWrapper extends HTMLElement {
 
             <div>
                 <input type="${this.type}" placeholder = "${this.placeholder}">
-                <div class="error">Bạn chưa nhập gì vào đây</div>
+                <div class="error"></div>
             </div>
         
         `;
 
-        let input = this.shadowDom.querySelector('input');
-        input.onblur = () => {
-            if(!input.value) {
-                this.shadowDom.querySelector('.error').style.display = 'block';
-            }
-        }
+    
     }
+
+
+    //Đăng ký lắng nghe thay đổi ở những attribute nào , ví dụ dưới là attribute error, hàm dưới return 1 mảng các attribute cần lắng nghe
+    static get observedAttributes() {
+        return ['error'];
+    }
+
+
+    //Sẽ được gọi khi attribute thay đổi: name là tên attribute muốn lắng nghe sự thay đổi, name ở đây phải được đăng ký với method ở trên
+    attributeChangedCallback(name, oldValue, newValue) {
+        if(name === 'error') {
+            this.shadowDom.querySelector('.error').innerText = newValue;
+        }
+
+        
+        
+    }
+
+
+
+
+
+
+
     get value() {
         return this.shadowDom.querySelector('input').value;
     }
