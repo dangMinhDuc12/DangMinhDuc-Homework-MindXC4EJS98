@@ -43,7 +43,7 @@ class RegisterScreen extends HTMLElement {
         
         `
         this.shadowDom.getElementById('redirect').onclick = () => {
-            redirect('login')
+            redirect('login');
         }
 
 

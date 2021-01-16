@@ -1,8 +1,10 @@
 import './screens/register-screen.js';
 import './screens/login-screen.js';
-import './screens/story-screen.js'
+import './screens/story-screen.js';
+import './components/header.js';
+import './components/create-posts.js'
 
-redirect('login');   
+
 
 
 export function redirect(screenName, userName) {     
@@ -11,7 +13,23 @@ export function redirect(screenName, userName) {
 
     }else if(screenName === 'register') {
         document.querySelector('#app').innerHTML = `<register-screen></register-screen>`;
-    }else if (screenName === 'welcome') {
+    }else if (screenName === 'story') {
         document.querySelector('#app').innerHTML = `<story-screen></story-screen>`;
     }
 }
+
+
+auth.onAuthStateChanged((user) => {
+    if(user) {
+        const userLogin = {
+            email: user.email,
+            displayName: user.displayName,
+            id: user.uid
+        }
+
+        window.currentUser = userLogin;
+        redirect('story');
+    }else {
+        redirect('login');
+    }
+});

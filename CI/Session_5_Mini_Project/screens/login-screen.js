@@ -57,14 +57,8 @@ class LoginScreen extends HTMLElement {
                         //     return
                         // }
 
-                        const user = {
-                            email: res.user.email,
-                            displayName: res.user.displayName,
-                            id: res.user.uid
-                        }
-
-                        window.currentUser = user;
-                        redirect('welcome');
+                
+                        redirect('story');
 
                     })
                     .catch(err => {
