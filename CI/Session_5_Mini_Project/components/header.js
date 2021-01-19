@@ -40,7 +40,7 @@ class Header extends HTMLElement {
             </div>
 
 
-            <create-post></create-post>
+            
         
         `
     }

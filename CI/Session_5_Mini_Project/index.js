@@ -2,7 +2,9 @@ import './screens/register-screen.js';
 import './screens/login-screen.js';
 import './screens/story-screen.js';
 import './components/header.js';
-import './components/create-posts.js'
+import './components/create-posts.js';
+import './components/list-posts.js';
+import './components/post-item.js'
 
 
 
