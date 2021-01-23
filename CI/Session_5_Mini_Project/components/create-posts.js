@@ -82,12 +82,13 @@ class CreatePosts extends HTMLElement {
                 });
                 alert('Bạn đã tải lên thành công');
                 this.shadowDom.querySelector('#text').value = '';
-                db.collection('posts').doc(docRef.id).update({
+                await db.collection('posts').doc(docRef.id).update({
                     img: await uploadFile(file.files[0])
                 });
+                file.value = '';
                 
             }else {
-                alert('Bạn hãy nhập gì đấy');
+                alert('Bài viết không có ảnh hoặc bạn chưa nhập gì');
             }
         
         }

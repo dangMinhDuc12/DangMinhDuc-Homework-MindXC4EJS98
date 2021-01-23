@@ -6,17 +6,11 @@ export function emailValid(email) {
 
 
 export async function uploadFile (file){
-    // tao duong dan den file
-    const fileName = file.name
-    const filePath = `images/${fileName}`
-    // tro den duong dan do
-    const fileRef = firebase.storage().ref().child(filePath)
-    // day file len duong dan day
-    await fileRef.put(file)
-    // sau khi xong thi lay url
-    return getFileUrl(fileRef)
-    }
 
-    function getFileUrl(fileRef) {
-        return `https://firebasestorage.googleapis.com/v0/b/${fileRef.bucket}/o/${encodeURIComponent(fileRef.fullPath)}?alt=media`
-    }
+    //Tạo đường dẫn tham chiếu đến file trên firebase
+    const fileRef = ref.child(`images/${file.name}`);
+    //Đợi put file lên sau đó lấy url
+    await fileRef.put(file);
+    return `https://firebasestorage.googleapis.com/v0/b/${fileRef.bucket}/o/${encodeURIComponent(fileRef.fullPath)}?alt=media`;
+}
+
