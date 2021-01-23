@@ -1,3 +1,7 @@
+
+import redirect from '../index.js';
+
+
 const style = `
     .header {
         display: flex;
@@ -13,6 +17,9 @@ const style = `
     }
     .header__right-avatar {
         margin-right: 20px;
+    }
+    .logout {
+        cursor:pointer
     }
 
 `
@@ -35,7 +42,7 @@ class Header extends HTMLElement {
                 <div>Logo</div>
                 <div class = "header__right">
                     <div class = "header__right-avatar">Avatar</div>
-                    <div>Logout</div>
+                    <div class = 'logout'>Logout</div>
                 </div>
             </div>
 
@@ -43,7 +50,15 @@ class Header extends HTMLElement {
             
         
         `
+        this.shadowDom.querySelector('.logout').onclick = () => {
+            auth.signOut()
+                .then(() => {
+                    alert('Bạn đã đăng xuất');
+                    redirect('login');
+                })
+        }
     }
+    
 }
 
 

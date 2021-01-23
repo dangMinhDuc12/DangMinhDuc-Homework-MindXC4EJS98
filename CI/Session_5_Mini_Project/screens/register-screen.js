@@ -1,6 +1,6 @@
 import '../components/input-wrapper.js';
 import {emailValid} from '../ultis.js';
-import {redirect} from '../index.js'
+import redirect from '../index.js'
 
 
 class RegisterScreen extends HTMLElement {

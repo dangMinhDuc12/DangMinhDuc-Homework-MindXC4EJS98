@@ -1,3 +1,7 @@
+import {uploadFile} from '../ultis.js'
+
+
+
 const style = `
 <style>
 .create__post{
@@ -56,10 +60,10 @@ class CreatePosts extends HTMLElement {
 
     <div class="create__post">
         <div class="content">
-            <textarea class = "content-input" name="" id=""></textarea>
+            <textarea class = "content-input" name="" id="text"></textarea>
         </div>
         <div class="button">
-            <input type="file" name="" id="">
+            <input type="file" name="" id="file">
             <button class = "button-post">Post</button>
         </div>
     </div>
@@ -67,18 +71,24 @@ class CreatePosts extends HTMLElement {
         
         
         `;
-        this.shadowDom.querySelector('.button-post').onclick = () => {
+        this.shadowDom.querySelector('.button-post').onclick = async () => {
+        
+            const file = this.shadowDom.getElementById("file");
             const content = this.shadowDom.querySelector('.content-input').value;
-            if(content.trim()) {
+            if(content.trim() && file.files.length) {
                 db.collection('posts').add({
-                    content
+                    content,
+                    img: await uploadFile(file.files[0])
                 })
                 alert('Bạn đã tải lên thành công');
+                this.shadowDom.querySelector('#text').value = '';
             }else {
                 alert('Bạn hãy nhập gì đấy');
             }
         
         }
+
+    
     
     }
 }

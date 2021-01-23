@@ -1,6 +1,6 @@
 import '../components/input-wrapper.js'
 import './register-screen.js'
-import {redirect} from '../index.js'
+import redirect from '../index.js'
 
 
 class LoginScreen extends HTMLElement {

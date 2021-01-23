@@ -9,14 +9,21 @@ import './components/post-item.js'
 
 
 
-export function redirect(screenName, userName) {     
-    if(screenName === 'login') {
-        document.querySelector('#app').innerHTML = `<login-screen></login-screen>`;
+export default function redirect(screen) {     
 
-    }else if(screenName === 'register') {
-        document.querySelector('#app').innerHTML = `<register-screen></register-screen>`;
-    }else if (screenName === 'story') {
+    switch (screen) {
+        case 'login':
+            document.querySelector('#app').innerHTML = `<login-screen></login-screen>`;
+            break;
+        
+        case 'register': 
+            document.querySelector('#app').innerHTML = `<register-screen></register-screen>`;
+
+        case 'story':      
         document.querySelector('#app').innerHTML = `<story-screen></story-screen>`;
+
+        default:
+            break;
     }
 }
 
