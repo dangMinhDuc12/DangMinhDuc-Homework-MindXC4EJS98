@@ -76,12 +76,16 @@ class CreatePosts extends HTMLElement {
             const file = this.shadowDom.getElementById("file");
             const content = this.shadowDom.querySelector('.content-input').value;
             if(content.trim() && file.files.length) {
-                db.collection('posts').add({
-                    content,
-                    img: await uploadFile(file.files[0])
-                })
+                let docRef = await db.collection('posts').add({
+                    content
+                    
+                });
                 alert('Bạn đã tải lên thành công');
                 this.shadowDom.querySelector('#text').value = '';
+                db.collection('posts').doc(docRef.id).update({
+                    img: await uploadFile(file.files[0])
+                });
+                
             }else {
                 alert('Bạn hãy nhập gì đấy');
             }
